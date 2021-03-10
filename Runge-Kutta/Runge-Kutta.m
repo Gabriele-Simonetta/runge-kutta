@@ -8,7 +8,7 @@ a1=2.5; % [m] altezza luce di fondo cassa 1
 zf1=37.5; %[m]Quota di base della luce di fondo cassa 1
 L1= 10; %[m] Lunghezza dello scarico di fondo cassa 1
 DZ= 0.5; % [m] Differenza quote ingresso uscita scarico
-g=9.806; %[m/s²] accellerazione di gravità
+g=9.806; %[m/sÂ²] accellerazione di gravitÃ 
 chi=0; % coef di efflusso
 Kstri= 50;% [m^(1/3)/s] Coefficiente di liscezza di Strickler
 Ls= 150; %[m] Lunghezza dello sfioratore di superficie
@@ -23,7 +23,7 @@ time=72; %finestra osservazione
 m=1; %minuti di discretizzazione
 dt=m/60; %passo della discretizzazione
 %Primi calcoli
-A1=a1*b1; % [m²] Area luce di fondo
+A1=a1*b1; % [mÂ²] Area luce di fondo
 Rh1=A1/(2*(a1+b1)); %[m] Raggio idraulico della luce di fondo
 Coef_Chezy= Kstri*Rh1^(1/6); %Coefficiente di Chezy c (m1/2/s)
 perdi_distrib1= 2*g*L1/(Coef_Chezy^2*Rh1); %Coefficiente per le perdite di carico distribuite = 2gL/Rc2
@@ -164,7 +164,7 @@ for t=dt:dt:time
     
  if i==1
     Q1(1)=Qedt(1);
-    DZ11=dt*(Qedt(2)-Q1(1)-Q12(1))/(Sup1(1)); %!! Qedt(2)  cioè allo step successivo altrimenti  rimangono nulli
+    DZ11=dt*(Qedt(2)-Q1(1)-Q12(1))/(Sup1(1)); %!! Qedt(2)  cioÃ¨ allo step successivo altrimenti  rimangono nulli
     DZ21=dt*(Q12(1))/(Sup2(1));
  else 
     Sup1=interp1(Z,S1,Z1,'linear');%S1 alla quota Z1
@@ -195,7 +195,7 @@ DZ22=dt*(Q12-0/Sup2);
 i=i+1;
 end
     
-%non  cancellare più in basso sono già impostate le immagini che si
+%non  cancellare piÃ¹ in basso sono giÃ  impostate le immagini che si
 %dovranno salvare
 
 
@@ -268,7 +268,7 @@ end
 % ax1.XColor = 'r';
 % ax1.YColor = 'k';
 % ax1_pos = ax1.Position; % position of first axes
-% xlabel ('Volume invasabile [10^6 m³]');
+% xlabel ('Volume invasabile [10^6 mÂ³]');
 % ylabel ('Quota idrica [m s.l.m]');
 % grid on
 % ax2 = axes('Position',ax1_pos,'XAxisLocation','top','YAxisLocation','right','Color','none');
@@ -286,7 +286,7 @@ end
 % plot(O(1:31),Z(1:31));
 % grid on
 % grid minor
-% xlabel('O [m³]');
+% xlabel('O [mÂ³]');
 % ylabel('Quota idrica [m s.l.m]');
 % saveas(gcf,'hinterp_fig.fig'); %salvataggio grafico formato .fig
 % saveas(gcf,'hinterp_fig.png'); %salvataggio grafico formato .png
@@ -297,8 +297,8 @@ end
 % plot(O(1:31),Qu(1:31));
 % grid on
 % grid minor
-% xlabel('O [m³]');
-% ylabel('Portata uscente [m³/s]');
+% xlabel('O [mÂ³]');
+% ylabel('Portata uscente [mÂ³/s]');
 % saveas(gcf,'Qinterp_fig.fig'); %salvataggio grafico formato .fig
 % saveas(gcf,'Qinterp_fig.png'); %salvataggio grafico formato .png
 % 
@@ -307,8 +307,8 @@ end
 % plot(O(1:31),W(1:31));
 % grid on
 % grid minor
-% xlabel('O [m³]');
-% ylabel('Volume invasabile [m³]');
+% xlabel('O [mÂ³]');
+% ylabel('Volume invasabile [mÂ³]');
 % saveas(gcf,'Winterp_fig.fig'); %salvataggio grafico formato .fig
 % saveas(gcf,'Winterp_fig.png'); %salvataggio grafico formato .png
 % 
@@ -320,7 +320,7 @@ end
 % plot(T(:,1),Mat(:,3,3));
 % title('T=50 anni');
 % xlabel('Tempo [h]')
-% ylabel('Volumi [10³ m³]');
+% ylabel('Volumi [10Â³ mÂ³]');
 % yyaxis right
 % plot(T(:,1),Mat(:,2,3));
 % ylabel('Quota idrica [m s.l.m]');
@@ -338,7 +338,7 @@ end
 % grid on
 % grid minor
 % xlabel('Tempo[h]');
-% ylabel('Portata  [m³/s]');
+% ylabel('Portata  [mÂ³/s]');
 % ylim([0 (max(QeMAX)+100)]);
 % xlim([0 (i+1)]);
 % legend('Portata entrante T=200','Portata uscente T=200');
@@ -352,7 +352,7 @@ end
 % plot(T(:,1),Mat(:,3,6));
 % title('T=200 anni');
 % xlabel('Tempo [h]')
-% ylabel('Volumi [10³ m³]');
+% ylabel('Volumi [10Â³ mÂ³]');
 % yyaxis right
 % plot(T(:,1),Mat(:,2,6));
 % ylabel('Quota idrica [m s.l.m]');
@@ -370,7 +370,7 @@ end
 % grid on
 % grid minor
 % xlabel('Tempo[h]');
-% ylabel('Portata entrante [m³/s]');
+% ylabel('Portata entrante [mÂ³/s]');
 % ylim([0 (max(QeMAX)+100)]);
 % xlim([0 (i+1)]);
 % legend((sprintf("T=5")),(sprintf("T=10")),(sprintf("T=20")),(sprintf("T=50")),(sprintf("T=100")),(sprintf("T=200")),(sprintf("T=500")));
@@ -384,7 +384,7 @@ end
 % grid on
 % grid minor
 % xlabel('Tempo[h]');
-% ylabel('Portata uscente [m³/s]');
+% ylabel('Portata uscente [mÂ³/s]');
 % ylim([0 (max(QeMAX)+100)]);
 % xlim([0 (i+1)]);
 % legend((sprintf("T=5")),(sprintf("T=10")),(sprintf("T=20")),(sprintf("T=50")),(sprintf("T=100")),(sprintf("T=200")),(sprintf("T=500")));
@@ -397,7 +397,7 @@ end
 % plot(Mat(:,4,1),Mat(:,2,1),'--y',Mat(:,4,2),Mat(:,2,2),'--m',Mat(:,4,3),Mat(:,2,3),'--b',Mat(:,4,4),Mat(:,2,4),'--c',Mat(:,4,5),Mat(:,2,5),'--r',Mat(:,4,6),Mat(:,2,6),'--k',Mat(:,4,7),Mat(:,2,7),'--');
 % grid on
 % grid minor
-% xlabel('Portate uscenti [m³/s]');
+% xlabel('Portate uscenti [mÂ³/s]');
 % ylabel('Quota idrica [m s.l.m]');
 % legend((sprintf("T=5")),(sprintf("T=10")),(sprintf("T=20")),(sprintf("T=50")),(sprintf("T=100")),(sprintf("T=200")),(sprintf("T=500")));
 % saveas(gcf,'Quota_Portata_fig.fig'); %salvataggio grafico formato .fig
@@ -411,7 +411,7 @@ end
 % plot(Temporitorno,WMAX);
 % %title('Plots with Different y-Scales')
 % xlabel('Tempo di ritorno')
-% ylabel('Volume [10³ m³]');
+% ylabel('Volume [10Â³ mÂ³]');
 % yyaxis right
 % plot(Temporitorno,ZMAX);
 % ylabel('Quota idrica [m s.l.m]');
@@ -449,7 +449,7 @@ end
 % [x,y,ridotta] = carta_di_gumbel(Temporitorno,ymax);
 % hold on
 % plot(QeMAX,ridotta, 'y',QuMAX,ridotta,'r');
-% xlabel('Portata [m³/s]');
+% xlabel('Portata [mÂ³/s]');
 % grid 'on'
 % grid minor
 % ylabel ('Variabile ridotta di Gumbel');
