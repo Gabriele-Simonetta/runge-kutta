@@ -1,0 +1,2 @@
+# runge-kutta
+L’uso di una cassa di laminazione rientra nei progetti strutturali intensivi per il controllo delle piene. Risulta essere di fondamentale importanza per ridurre a valle la portata transitante, diminuendo così le probabilità d’esondazione, nel caso di incompatibilità dell’alveo. Questo studio è necessario per adeguare l’alveo alla normativa europea che prevede che l’alveo possa sostenere il transito di una portata duecentennale.
